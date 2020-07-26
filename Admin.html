@@ -420,13 +420,13 @@
             console.log(w);
             viewHtml += w;
             viewHtml +=
-              "<button type='button' style='margin:10px' class='btn btn-success accept-hero' id=" +
+              "<button type='button' style='margin:10px' class='btn btn-success accept-hero' id='accept" +
               w +
-              '>Accept</button>';
+              "'>Accept</button>";
             viewHtml +=
-              "<button type='button' style='margin:10px' class='btn btn-danger reject-hero' id=" +
+              "<button type='button' style='margin:10px' class='btn btn-danger reject-hero' id=reject" +
               w +
-              '>Reject</button>';
+              "'>Reject</button>";
             viewHtml += '<br>';
           });
           $('#views').html(viewHtml);
@@ -441,7 +441,7 @@
         );
 
         $(this).after($rate);
-        $('.reject-hero').hide();
+        $('#volunterid').hide();
       });
 
       $(document).on('click', '.ratebtn', function () {
@@ -452,7 +452,7 @@
 
       $(document).on('click', '.reject-hero', function () {
         var volunterid = $(this).attr('id');
-        $('.accept-hero').hide();
+        $('#volunterid').hide();
         $(this).text('Rejected');
       });
       firebase.auth().onAuthStateChanged(function (user) {
